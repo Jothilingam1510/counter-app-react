@@ -1,17 +1,10 @@
 import React, { useState } from 'react';
 
-const CounterApp = () => {
-  const [count, setCount] = useState(0);
-
-  const incrementCount = () => {
-    setCount(count + 1);
-  };
-
-  const decrementCount = () => {
-    if(count >0){
-      setCount(count -1);
-    }else{
-      setCount(0)
+const handleCounter = (isIncrement) => {
+    if (isIncrement) {
+      setCount(count + 1);
+    } else {
+      setCount(count > 0 ? count - 1 : 0);
     }
   };
 
@@ -23,6 +16,6 @@ const CounterApp = () => {
       <button onClick={decrementCount}>Decrement</button>
     </div>
   );
-};
+
 
 export default CounterApp;
